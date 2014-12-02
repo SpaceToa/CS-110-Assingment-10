@@ -1,4 +1,4 @@
-java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Game
 {
@@ -7,23 +7,29 @@ public class Game
    
    String name1;
    String name2;
-   
-   Arraylist startDeck = new Arraylist();
+
+   Deck startDeck =  new Deck();
    
    public Game(String n1, String n2)
    {
       name1 = n1;
       name2 = n2;
       
-      for (int i=0; i>4; i++)
+      Deck startDeck =  new Deck();
+      startDeck.fill();
+      
+      PlayerDeck deck1 = new PlayerDeck();
+      PlayerDeck deck2 = new PlayerDeck();
+      
+      while (i <= )
       {
-         for(int j=0; j>14; j++)
-         {
-            Card aCard = new Card(i,j)
-         }
+         
       }
       
+      
    }
+   
+   //public int round+
    
    
 }

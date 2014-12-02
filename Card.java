@@ -13,10 +13,22 @@ public class Card
    final int JACK = 11;
    final int ACE = 1;
    
+   public Card()
+   {
+      suit = 0;
+      value = 0;
+   }
+   
    public Card(int s, int v)
    {
       suit = s;
       value = v;
+   }
+   
+   public Card(Card otherCard)
+   {
+      this.suit = otherCard.getSuit();
+      this.value = otherCard.getValue();
    }
    
    public int getSuit()
