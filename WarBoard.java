@@ -15,7 +15,7 @@ class WarBoard extends JFrame
       panel = new JPanel();
       buttonNext = new JButton("Next Round");
       panel.add(buttonNext);
-      //buttonNext.addActionListener(new ButtonListener());
+      buttonNext.addActionListener(new ButtonListener());
          
       add(panel);
    }
