@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class PlayerDeck extends Deck
 {
-   public playerDeck()
+   public PlayerDeck()
    {
       deck = new ArrayList<Card>();
    }
@@ -24,5 +27,20 @@ public class PlayerDeck extends Deck
          deck.set(r,temp1);
          
       }
+   }
+   
+   public void addTo(Deck oD)
+   {
+      Card temp1;
+      int oDCount = oD.getCurCards();
+      
+      while (oDCount > 0)
+      {
+         temp1 = oD.get(oDCount);
+         oD.remove(oDCount);
+         deck.add(temp1);
+         oDCount --;
+         curCards ++;
+      }   
    }
 }

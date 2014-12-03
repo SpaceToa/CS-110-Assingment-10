@@ -38,13 +38,30 @@ public class Deck
    public Card draw()
    { 
       tempCard = deck.get(curCards);
+      deck.remove(curCards);
       curCards --;
       return tempCard;
+   }
+   
+   public Card get(int i)
+   {
+      tempCard = deck.get(i);
+      return tempCard;
+   }
+   
+   public void remove(int i)
+   {
+      deck.remove(i);
    }
    
    public void add(Card c)
    {
       deck.add(c);
       curCards ++;
+   }
+   
+   public int getCurCards()
+   {
+      return curCards;
    }
 }
