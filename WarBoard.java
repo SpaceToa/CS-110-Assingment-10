@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 class WarBoard extends JFrame
 {
+   private JFrame frame;
    private JPanel panel;
    private JButton buttonNext;
    
@@ -12,10 +13,17 @@ class WarBoard extends JFrame
       super(s);
 
       // set up a new panel in the frame
+      int wHight = 500;
+      int wWidth = 700;
+      frame = new JFrame ();
+      frame.setSize(wWidth,wHight);
+      
+      frame.setVisible(true);
       panel = new JPanel();
+      panel.setSize(wWidth,wHight);
       buttonNext = new JButton("Next Round");
-      panel.add(buttonNext);
-      buttonNext.addActionListener(new ButtonListener());
+      frame.add(buttonNext);
+      //buttonNext.addActionListener(new ButtonListener());
          
       add(panel);
    }
