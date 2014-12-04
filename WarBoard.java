@@ -17,15 +17,7 @@ class WarBoard extends JFrame
       int wWidth = 700;
       frame = new JFrame ();
       frame.setSize(wWidth,wHight);
-      
       frame.setVisible(true);
-      panel = new JPanel();
-      panel.setSize(wWidth,wHight);
-      buttonNext = new JButton("Next Round");
-      frame.add(buttonNext);
-      //buttonNext.addActionListener(new ButtonListener());
-         
-      add(panel);
    }
 
    public static void main(String [] args)

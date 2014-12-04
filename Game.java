@@ -1,20 +1,28 @@
 import java.util.ArrayList;
 
+/**The Game class holds all game functionalloty of for the card game WAR
+ *
+ *@author Andy Green
+ *@version 1.00
+ *
+*/
 public class Game
 {
-   int value1;
-   int value2;
+   int value1;/**The value of first players active card*/
+   int value2;/**The value of second players active card*/
    
-   String name1;
-   String name2;
+   String name1;/**The String of first players name*/
+   String name2;/**The String of second players name*/
 
-   String winner;   
-
-   Deck startDeck =  new Deck();
+   Deck startDeck =  new Deck();/**A deck object that represents a full deck that will be split between the players*/ 
    
-   PlayerDeck deck1 = new PlayerDeck();
-   PlayerDeck deck2 = new PlayerDeck();
+   PlayerDeck deck1 = new PlayerDeck();/**First players deck*/
+   PlayerDeck deck2 = new PlayerDeck();/**Second players deck*/
    
+   /**A Contructor that starts by making the startDeck and the two player decks
+    *@param n1 the name of the first player
+    *@param n2 the name of the second player
+    */
    public Game(String n1, String n2)
    {
       name1 = n1;
@@ -26,7 +34,8 @@ public class Game
       PlayerDeck deck1 = new PlayerDeck();
       PlayerDeck deck2 = new PlayerDeck();
    }      
-      
+    
+   /**Splits the startDeck into the two decks for the players then shuffles those decks*/    
    public void start()
    {   
       int i=0;
@@ -56,8 +65,15 @@ public class Game
       
    }
    
+   /**Simulates one round of WAR. checking first if a player is out of the cards and declaring who won if someone is out of cards
+    *then it pulls the top cards from each deck and compares then and annouces a winner and puts the in play cards into their deck.
+    *if there is a tie the round starts again with the in play cards going to the war piles.
+    *@return A string declaring who won and the cards they had or who won the game when someones deck runs out.
+    */
+   
    public String round()
    {
+      String winner;
       if(deck1.getEmpty())
       {
         winner = name1 + " is out of cards \n" + name2 + " WINS!";

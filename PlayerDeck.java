@@ -1,14 +1,21 @@
 import java.util.ArrayList;
 import java.util.Random;
-
+/**The PlayerDeck class extends Deck and holds an array list that simulates a deck of Cards*
+ *
+ *@author Andy Green
+ *@version 1.00
+ *
+*/
 public class PlayerDeck extends Deck
 {
+   /** Creates a deck with a empty ArrayList with a capasity of 52 */
    public PlayerDeck()
    {
       Deck deck = new Deck();
       curCards = 0;
    }
    
+   /** Randomly arranges the cards in the PlayerDeck ArrayList*/
    public void shuffle()
    {
       int i = 0;
@@ -28,20 +35,5 @@ public class PlayerDeck extends Deck
          deck.set(r,temp1);
          
       }
-   }
-   
-   public void addTo(Deck oD)
-   {
-      Card temp1;
-      int oDCount = oD.getCurCards();
-      
-      while (oDCount > 0)
-      {
-         temp1 = oD.get(oDCount);
-         oD.remove(oDCount);
-         deck.add(temp1);
-         oDCount --;
-         curCards ++;
-      }   
    }
 }
