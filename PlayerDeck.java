@@ -5,7 +5,8 @@ public class PlayerDeck extends Deck
 {
    public PlayerDeck()
    {
-      deck = new ArrayList<Card>();
+      Deck deck = new Deck();
+      curCards = 0;
    }
    
    public void shuffle()
@@ -14,7 +15,7 @@ public class PlayerDeck extends Deck
       
       Random Rand = new Random();
       
-      for(i=0; i > curCards; i++)
+      for(i=0; i <= curCards-1; i++)
       {
          int r = Rand.nextInt(curCards-1);
          
